@@ -7,7 +7,7 @@ const proxy = httpProxy.createProxyServer();
 const app = express();
 app.use(cors());
 
-app.get("/getData",(req,res)=>{
+app.get("", (req,res)=>{
   res.send("Hell, its working...");
 });
 

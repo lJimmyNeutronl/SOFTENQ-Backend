@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const httpProxy = require('http-proxy');
 const proxy = httpProxy.createProxyServer();
+const models = require("./models");
+const Role = models.Role;
 
 const app = express();
 app.use(cors());
@@ -19,6 +21,8 @@ app.get("", (req,res)=>{
 
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
+
+
 
 app.listen(3000, () => {
   console.log(`Server is running on port 3000.`);
